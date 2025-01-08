@@ -79,7 +79,29 @@ zu gefährden.
    3. Installation MMCV: ```pip install mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html```
 5. Installation von MMPose: ```mim install "mmpose>=1.1.0"```
 6. Überprüfe korrekte Installation (in ```mmpose``` Umgebung):
+   1. Modellcheckpoint und -config zum Testen herunterladen ```mim download mmpose --config td-hm_hrnet-w48_8xb32-210e_coco-256x192  --dest ./mmpose/configs```
    1. ```python demo/image_demo.py ./mmpose/demo/demo.jpg ./mmpose/demo/td-hm_hrnet-w48_8xb32-210e_coco-256x192.py ./mmpose/demo/td-hm_hrnet-w48_8xb32-210e_coco-256x192-0e67c616_20220913.pth --out-file vis_results.jpg --draw-heatmap```
    Führt testweise eine 2D Posenerkennung anhand des zuvor heruntergeladenen Modells durch.
    2. Es sollte die Datei ```vis_results.jpg``` mit dargestellten Keypoints im Stammverzeichnis des Projekts sichtbar sein.
 
+### Nutzung des MMPose Model Zoo
+Um das Posenerkennungsmodell mit einem anderen aus dem [MMPose Model Zoo](https://mmpose.readthedocs.io/en/latest/model_zoo/wholebody_2d_keypoint.html) auszutauschen, müssen die Modell-Checkpoints 
+und die zugehörige Konfigurationsdatei des gewünschten Modells heruntergeladen werden.
+
+#### Schritte zum Modellwechsel:
+1. Auswahl eines Modells im Model Zoo:
+   - Besuche den [MMPose Model Zoo](https://mmpose.readthedocs.io/en/latest/model_zoo/wholebody_2d_keypoint.html).
+   - Wähle das gewünschte Modell aus der tabellarischen Übersicht aus.
+   - Klicke auf den Modellnamen, um zur zugehörigen Konfigurationsdatei (*.py) zu gelangen.
+2. Konfigurationsdatei identifizieren:
+   - Kopiere den Namen der Konfigurationsdatei (ohne die Endung .py).
+   - Beispiel: Für die Datei ```hrnet_w48_coco_wholebody_384x288.py``` kopiere ```hrnet_w48_coco_wholebody_384x288```.
+3. Download von Modell und Konfiguration:
+   - Führe den folgenden Befehl in der Kommandozeile aus, um die Konfigurationsdatei und den Modell-Checkpoint 
+   herunterzuladen:
+   ```mim download mmpose --config <Konfigurationsdatei> --dest ./mmpose/configs```
+   - Beispiel:
+   ```mim download mmpose --config hrnet_w48_coco_wholebody_384x288 --dest ./mmpose/configs```
+4. Speicherort der Dateien:
+   - Nach der Ausführung des Befehls befinden sich die heruntergeladene Konfigurationsdatei und der Modell-Checkpoint 
+   im angegebenen Verzeichnis (z. B. ```./mmpose/configs```).
