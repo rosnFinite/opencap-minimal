@@ -1,0 +1,10 @@
+# Ignore all files in Data/
+Data/*
+!Data/.gitkeep
+
+opensim.log
+notebooks/opensim.log
+
+__pycache__/
+.pyc
+.idea/
