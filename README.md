@@ -47,7 +47,7 @@ Die folgenden Schritte leiten dich durch die Installation:
 > Für eine schnelle Einrichtung kannst du die bereitgestellte YAML-Umgebungsdatei verwenden, um 
 > eine Anaconda-Umgebung zu erstellen.
 
-1. ```conda env create -f opencap_env.yml```
+1. ```conda env create -f opencap_env.yml -y```
 2. Aktiviere die Umgebung in deiner IDE oder über die Kommandozeile:
 ```conda activate opencap_min```
 
@@ -77,6 +77,7 @@ zu gefährden.
    1. Installation von MIM, OpenMMLab Paketmanager (ermöglicht das einfache installieren von Modellen): ```pip install -U openmim```
    2. Installation von MMEngine: ```pip install mmengine```
    3. Installation MMCV: ```pip install mmcv==2.1.0 -f https://download.openmmlab.com/mmcv/dist/cu121/torch2.1/index.html```
+   4. Installation von MMDet: ```mim install "mmdet>=3.1.0"```
 5. Installation von MMPose: ```mim install "mmpose>=1.1.0"```
 6. Überprüfe korrekte Installation (in ```mmpose``` Umgebung):
    1. Modellcheckpoint und -config zum Testen herunterladen ```mim download mmpose --config td-hm_hrnet-w48_8xb32-210e_coco-256x192  --dest ./mmpose/configs```
