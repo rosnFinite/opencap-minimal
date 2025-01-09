@@ -703,7 +703,11 @@ def main(sessionName, trialName, trial_id, cameras_to_use=['all'],
 
 
 if __name__ == "__main__":
-    # other poseDetector = OpenPose
+    # MMPose parameters (poseDetector="mmpose_utils")
+    # mmposeModelCfg -> path to previously downloaded *.py file of the model
+    #                   e.g. "./mmpose/configs/rtmpose-l_8xb32-270e_coco-wholebody-384x288.py"
+    # mmposeModelCkp -> path to previously downloaded *.pth file of the model
+    #                   e.g. "./mmpose/configs/rtmpose-l_simcc-coco-wholebody_pt-aic-coco_270e-384x288-eaeb96c8_20230125.pth"
     main(sessionName='',
          trialName="",
          trial_id='',
@@ -712,3 +716,9 @@ if __name__ == "__main__":
          mmposeModelCfg="",
          mmposeModelCkp="")
 
+    # other poseDetector="OpenPose" (Default)
+    main(sessionName='',
+         trialName="",
+         trial_id='',
+         poseDetector="OpenPose", genericFolderNames=True,
+         dataDir='',)
