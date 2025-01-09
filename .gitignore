@@ -3,7 +3,7 @@ Data/*
 !Data/.gitkeep
 
 mmpose/configs/*
-!mmpose/config/.gitkeep
+!mmpose/configs/.gitkeep
 
 opensim.log
 notebooks/opensim.log
