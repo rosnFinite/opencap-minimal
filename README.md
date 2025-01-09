@@ -81,9 +81,9 @@ zu gefährden.
 5. Installation von MMPose: ```mim install "mmpose>=1.1.0"```
 6. Überprüfe korrekte Installation (in ```mmpose``` Umgebung):
    1. Modellcheckpoint und -config zum Testen herunterladen ```mim download mmpose --config td-hm_hrnet-w48_8xb32-210e_coco-256x192  --dest ./mmpose/configs```
-   1. ```python demo/image_demo.py ./mmpose/demo/demo.jpg ./mmpose/demo/td-hm_hrnet-w48_8xb32-210e_coco-256x192.py ./mmpose/demo/td-hm_hrnet-w48_8xb32-210e_coco-256x192-0e67c616_20220913.pth --out-file vis_results.jpg --draw-heatmap```
+   1. ```python ./mmpose/verify_install.py```
    Führt testweise eine 2D Posenerkennung anhand des zuvor heruntergeladenen Modells durch.
-   2. Es sollte die Datei ```vis_results.jpg``` mit dargestellten Keypoints im Stammverzeichnis des Projekts sichtbar sein.
+   2. Bei korrekter Installation wird in der Ausgabe ein Objekt mit den erfassten Keypoints ausgegeben.
 
 ### Nutzung des MMPose Model Zoo
 Um das Posenerkennungsmodell mit einem anderen aus dem [MMPose Model Zoo](https://mmpose.readthedocs.io/en/latest/model_zoo/wholebody_2d_keypoint.html) auszutauschen, müssen die Modell-Checkpoints 
