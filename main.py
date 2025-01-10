@@ -398,9 +398,7 @@ def main(sessionName, trialName, trial_id, cameras_to_use=['all'],
             for camName in cameraDirectories:
                 trialPrefix, _ = os.path.splitext(os.path.basename(trialRelativePath))
                 videoFullPath = os.path.normpath(os.path.join(cameraDirectories[camName], trialRelativePath))
-                # The video is rewritten, unrotated, and downsampled. There is no
-                # need to do anything specific for the rotation, just rewriting the video
-                # unrotates it.
+                
                 trialPath, _ = os.path.splitext(trialRelativePath)
                 fileName_tmp = trialPath + "_rotated.avi"
                 pathVideoRot = os.path.normpath(os.path.join(cameraDirectories[camName], fileName_tmp))
